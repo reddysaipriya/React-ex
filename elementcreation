@@ -1,0 +1,68 @@
+// 4-2-25
+Create element by using  js:
+--document.createElement(‘h1’)
+Create element by using react-js:
+React.createElement(‘h1’)
+Syntax:
+React.createElement(type ,props)
+Type = tagname(h1,p,div)
+Prop = id,className,onclick
+reactDOM.createRoot()
+ReactDOM.render()-method is used to display to the element
+Syntax:
+Reactelement = what to render
+Container = where to render
+Example:
+Html code:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+</head>
+<body>
+    <div id ="root"></div>
+    <script src="a.js"></script>
+</body>
+</html>
+a.js code:
+const b=React.createElement(
+    'h1' ,{id:'a'},"I Am Saipriya"
+);
+const element=document.getElementById('root')
+const root=ReactDOM.createRoot(element)
+root.render(b)
+OUTPUT: I Am Saipriya
+
+Jsx:
+(javaScript XML)
+---it is a syntax extension for js
+---here we write the html code and this will be translated into js
+---Babel  --tool
+
+Points:
+<br/>
+<img/>
+Class =className
+Example:
+<body>
+    <div id ="app"></div>
+    <script src="text/babel">
+        const element=<h1 className="a">Hello JSX! </h1>
+        const e=document.getElementById('app')
+        const root=ReactDOM.createRoot(e)
+        root.render(element)
+    </script>
+</body>
+Expressions in jsx:{}
+<div id ="app"></div>
+    <script src="text/babel">
+        const n=10;
+        const m=<h1> react is {n*2} time better than JSX </h1>
+        const e=document.getElementById('app')
+        const root=ReactDOM.createRoot(e)
+        root.render(m)
+    </script>
