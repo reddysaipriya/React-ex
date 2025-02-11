@@ -1,0 +1,96 @@
+Assignment 2 \\ Task is to create a profilecard component that accepts props like name, greeting, img\\
+
+---App.js----
+import React from "react";
+
+const ProfileCard = ({ name, greeting, image }) => {
+  return (
+    <div className="bg-white p-4 rounded-2xl shadow-md w-64 text-center">
+      <img
+        src={image}
+        alt={name}
+        className="w-20 h-20 rounded-full mx-auto mb-2 object-cover"
+      />
+      <h2 className="text-xl font-semibold">{name}</h2>
+      <p className="text-gray-600">{greeting}</p>
+    </div>
+  );
+};
+
+const App = () => {
+  const profiles = [
+    {
+      name: "Vidhu",
+      greeting: "Hello, Everyone",
+      image: "https://randomuser.me/api/portraits/women/1.jpg",
+    },
+    {
+      name: "Manvith",
+      greeting: "Nice to meet you!",
+      image: "https://randomuser.me/api/portraits/men/3.jpg",
+    },
+    {
+      name: "Hardhik",
+      greeting: "Good morning",
+      image: "https://randomuser.me/api/portraits/men/2.jpg",
+    },
+  ];
+
+  return (
+    <div className="flex gap-4 p-4 bg-gray-100 min-h-screen justify-center">
+      {profiles.map((profile, index) => (
+        <ProfileCard
+          key={index}
+          name={profile.name}
+          greeting={profile.greeting}
+          image={profile.image}
+        />
+      ))}
+    </div>
+  );
+};
+
+export default App;
+
+----App.css---
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: beige;
+  color: brown;
+  margin: 0;
+  padding: 0;
+}
+
+.profile-card {
+  background-color: black;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 16rem;
+  text-align: center;
+}
+
+.profile-card img {
+  width: 80px;
+  height: 80px;
+  border-radius: 9999px;
+  object-fit: cover;
+  margin-bottom: 8px;
+}
+
+h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: green;
+}
+
+p {
+  font-size: 1rem;
+  color: brown;
+}
+
+.container {
+  display: flex;
+  gap: 16px;
+  padding: 16px;
+}
